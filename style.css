@@ -1,9 +1,13 @@
 
+html {
+    background-color: #c4c6cb;
+}
+
 body {
     font-family: Open Sans, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #c4c6cb;
+    background-color: transparent;
     color: #545454;
 }
 
@@ -41,11 +45,12 @@ h1 {
 
 .card {
     border: 1px solid #ccc;
-    height: 200px;
+    background-color: rgba(216, 218, 223, 0.1);   /* was: #d8dadf */
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
     border-radius: 8px;
     padding:10px;
     margin: 20px;
-    background-color: #d8dadf;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1)
 }
 
@@ -84,7 +89,7 @@ h1 {
 
 .social-links a:hover,
 .social-links a:focus-visible {
-  color:  #000; /* ORCID green – pick any accent */
+  color:  #000;
   transform: translateY(-2px);
 }
 
@@ -92,4 +97,22 @@ h1 {
   outline: 2px solid currentColor;
   outline-offset: 4px;
   border-radius: 4px;
+}
+
+#wave-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* everything else sits above the canvas */
+.bg_header_footer,
+.nav-ul,
+.card,
+footer {
+    position: relative;
+    z-index: 1;
 }
